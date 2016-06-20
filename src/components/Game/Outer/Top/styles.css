@@ -6,3 +6,18 @@
   text-align: center;
   font-size: 22px;
 }
+
+:local(.minesRemaining) {
+  float: left;
+}
+
+:local(.status) {
+  height: 26px;
+  width: 26px;
+  padding-right: 30px;
+  background-repeat: no-repeat;
+}
+
+:local(.timer) {
+  float: right;
+}

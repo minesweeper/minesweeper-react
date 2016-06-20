@@ -1,0 +1,47 @@
+:local(.lcd) {
+  height: 21px;
+  width: 11px;
+  margin: 3px 1px;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+:local(.n0) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAEMBCkSamUdeK0dQYgmHFhp5VjaZLhp25gAMjyNd+0GOPiqbotYK/yE66Klk8yxRlZIgA7);
+}
+
+:local(.n1) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENBCAMCutFidMb0qdJH7bJQJkeJLY+qnj17pX6Ek2h2foHMMSlikG8glPwZdRVtMUMzcoJgIAOw==);
+}
+
+:local(.n2) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENxCkSSkIsk55s50YBoxeR45UeJbimZqk1boJpm2Jd3N3HmyrjuUUGhJLxx/waBwVcxqhTjatACIAOw==);
+}
+
+:local(.n3) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENhCkSSkIsk55s50YBoxeR45UeJbimZqk1boJpm2Jd3d3ns+xGgy1AXpUtN/qOGTpfMIep7eJAAA7);
+}
+
+:local(.n4) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENhCAMCsFSdItk9cV5n1SN5LliZpnyY6uCMey3GZqS+V4GHscF+wiBPpYR1Yw9bkEjZZQJhqMAAA7);
+}
+
+:local(.n5) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENxCkSamUdYKg88YJIIrBZo0kiH6ctpbnWLZrGmYajOdgdZW1yWxlAaIowyOPKPwoQzpLc3fZaSIAOw==);
+}
+
+:local(.n6) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAEMhCkSamUdYKg88YJIIrBZo0kiH6ctpbnWLZrGmYajHdgpdYeFG41FAZHRaTPY9lddpoIADs=);
+}
+
+:local(.n7) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAENxCkSSkIsk55s50YBoxeR45UeJbimZqk1bqJqIrJeJt2h8M0FS03Q4GArJVHGNv0cDWdDyXdASIAOw==);
+}
+
+:local(.n8) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAEKhCkSamUdeK0dQYgmHFhp5VjaZLhp24rJ49eDL9um4v7qqaoiglGu9A0EQA7);
+}
+
+:local(.n9) {
+  background-image: url(data:image/gif;base64,R0lGODlhCwAVALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAACwAVAAAEMRCkSamUdeK0dQYgmHFhp5VjaZLhp24rJ49aEF/2O9l5W+s7QE/0U1F4xt8nSLvQNBEAOw==);
+}
