@@ -31,3 +31,23 @@ body {
   height: 18px;
   width: 52px;
 }
+
+.outer {
+  border: 3px outset #EEE;
+  background-color: #BBB;
+}
+
+.top {
+  height: 26px;
+  margin: 5px;
+  border: 3px inset #EEE;
+  background-color: #BBB;
+  text-align: center;
+  font-size: 22px;
+}
+
+.bottom {
+  margin: 5px;
+  border: 3px inset #EEE;
+  background-color: #BBB;
+}
