@@ -1,0 +1,5 @@
+:local(.bottom) {
+  margin: 5px;
+  border: 3px inset #EEE;
+  background-color: #BBB;
+}

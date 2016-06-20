@@ -1,0 +1,10 @@
+:local(.minesweeper) {
+  margin: auto auto;
+  border-width: 1px;
+  border-style: outset;
+  background-color: #BBB;
+  padding: 1px;
+  width: 500px;
+  top: 4px;
+  position: relative;
+}

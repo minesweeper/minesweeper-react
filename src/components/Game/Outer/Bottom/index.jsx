@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './styles.css';
 
 const Bottom = () => (
-  <div className="bottom">
+  <div className={styles.bottom}>
   </div>
 );
 

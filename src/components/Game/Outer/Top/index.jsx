@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './styles.css';
 
 const Top = () => (
-  <div className="top">
+  <div className={styles.top}>
   </div>
 );
 

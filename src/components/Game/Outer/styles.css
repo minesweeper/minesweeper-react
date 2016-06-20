@@ -1,0 +1,4 @@
+:local(.outer) {
+  border: 3px outset #EEE;
+  background-color: #BBB;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './styles.css';
 
 const Title = () => (
-  <div className="title">
-    <span className="title-left"></span>
-    <span className="title-right"></span>
+  <div className={styles.title}>
+    <span className={styles.left}></span>
+    <span className={styles.right}></span>
   </div>
 );
 
