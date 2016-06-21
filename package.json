@@ -4,7 +4,7 @@
   "description": "minesweeper in react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require mocha-compilers.js --require mocha-init.js src/**/*-spec.*"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,12 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-error-notification": "^0.1.6"
+  },
+  "devDependencies": {
+    "expect": "^1.20.1",
+    "expect-jsx": "^2.6.0",
+    "mocha": "^2.5.3",
+    "react-addons-test-utils": "^15.1.0",
+    "skin-deep": "^0.16.0"
   }
 }
