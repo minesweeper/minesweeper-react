@@ -3,3 +3,28 @@
   border: 3px inset #EEE;
   background-color: #BBB;
 }
+
+:local(.bottom) table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:local(.bottom) table, tbody, tr, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+:local(.field) {
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 16px;
+  width: 16px;
+}
+
+:local(.unclicked) {
+  background-image: url(data:image/gif;base64,R0lGODlhEAAQALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAAEAAQAAAELPDJSSt4J+ut0eVg5mEhN5bmh3bqepzu266wW9Mzeut5OSLAoFAIKBqPyGIEADs=);
+}
