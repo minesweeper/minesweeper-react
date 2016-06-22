@@ -12,7 +12,7 @@ const Bottom = () => {
     });
     return <tr key={row}>{cols}</tr>;
   });
-  return(
+  return (
     <div className={styles.bottom}>
       <table>
         <tbody>
