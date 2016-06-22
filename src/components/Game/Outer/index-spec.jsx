@@ -1,7 +1,7 @@
 import React from 'react';
 import Outer from './index.jsx';
-import Top from './Top/index.jsx';
-import Bottom from './Bottom/index.jsx';
+import Top from './Top';
+import Bottom from './Bottom';
 import styles from './styles.css';
 
 describe('Outer', () => {
