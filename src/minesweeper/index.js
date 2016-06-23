@@ -1,9 +1,17 @@
 import configuration from './configuration';
 
 const minesweeper = (options) => {
-  const finished = () => false;
+  let state = 'not started';
+
+  const finished = () => (state === 'won' || state === 'lost');
+  const reveal = (row, column) => {
+    state = 'won';
+  };
+
   return Object.assign(configuration(options), {
-    finished: finished
+    finished: finished,
+    state: () => state,
+    reveal: reveal
   });
 };
 
