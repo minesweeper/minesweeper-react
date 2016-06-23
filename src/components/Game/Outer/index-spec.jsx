@@ -1,5 +1,5 @@
 import React from 'react';
-import Outer from './index.jsx';
+import Outer from './';
 import Top from './Top';
 import Bottom from './Bottom';
 import styles from './styles.css';
