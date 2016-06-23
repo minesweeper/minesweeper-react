@@ -1,4 +1,5 @@
-import minesweeper from './index.js';
+import minesweeper from '.';
+import toOptions from './toOptions';
 
 describe('minesweeper', () => {
   describe('with defaults', () => {
@@ -27,6 +28,20 @@ describe('minesweeper', () => {
       game.reveal(0, 0);
       assert.equal(true, game.finished());
       assert.equal('won', game.state());
+    });
+  });
+
+  describe('in test mode (with fixed mines)', () => {
+    const options = toOptions(`
+      . . . .
+      . * * .
+      . . . .
+    `);
+
+    it('should have initial state', () => {
+      const game = minesweeper(options);
+      assert.equal(false, game.finished());
+      assert.equal('not started', game.state());
     });
   });
 });
