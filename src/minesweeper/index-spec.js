@@ -1,5 +1,9 @@
 import minesweeper from './index.js';
 
+// beginner:     rows: 9,  cols: 9,  mineCount: 10
+// intermediate: rows: 16, cols: 16, mineCount: 40
+// expert:       rows: 16, cols: 30, mineCount: 99
+
 const default_row_count = 16;
 const default_column_count = 30;
 const default_mine_count = 99;
