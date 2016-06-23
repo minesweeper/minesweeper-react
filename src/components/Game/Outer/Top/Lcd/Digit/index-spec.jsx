@@ -1,5 +1,5 @@
 import React from 'react';
-import Digit from '.';
+import Digit from './';
 import styles from './styles.css';
 
 describe('Digit', () => {
