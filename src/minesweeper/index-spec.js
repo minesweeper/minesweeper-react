@@ -24,10 +24,12 @@ describe('minesweeper', () => {
       assert.equal(false, game.test_mode);
     });
 
-    it('should reveal single adjacent mine', () => {
+    it('should reveal the neighbour to the one mine and immediately win the game', () => {
       assert.equal(fieldState.UNKNOWN, game.cellState(0, 0));
       game.reveal(0, 0);
-      assert.equal(fieldState.ONE, game.cellState(0, 0));
+      assert.equal('1', game.cellState(0, 0));
+      assert.equal(gameState.WON, game.state());
+      assert.equal(true, game.finished());
     });
   });
 
@@ -60,7 +62,7 @@ describe('minesweeper', () => {
     it('should reveal two adjacent mines', () => {
       assert.equal(fieldState.UNKNOWN, game.cellState(0, 1));
       game.reveal(0, 1);
-      assert.equal(fieldState.TWO, game.cellState(0, 1));
+      assert.equal('2', game.cellState(0, 1));
     });
   });
 });
