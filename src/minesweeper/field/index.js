@@ -1,13 +1,13 @@
 import fieldState from './fieldState';
-import _ from 'lodash';
+import {times} from 'lodash';
 
 export default (row_count, column_count) => {
   const state = [];
 
-  _.forEach(_.range(row_count), (row_index) => {
+  times(row_count, (row_index) => {
     const row = [];
     state.push(row);
-    _.forEach(_.range(column_count), (column_index) => {
+    times(column_count, (column_index) => {
       row.push(fieldState.UNKNOWN);
     });
   });
