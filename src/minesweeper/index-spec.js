@@ -16,7 +16,7 @@ describe('minesweeper', () => {
     let game = null;
     const options = { row_count: 1, column_count: 2, mine_count: 1};
 
-    before(() => { game = minesweeper(options); });
+    beforeEach(() => { game = minesweeper(options); });
 
     it('should have initial state for configured game', () => {
       assert.equal(false, game.finished());
@@ -32,17 +32,25 @@ describe('minesweeper', () => {
   });
 
   describe('in test mode (with fixed mines)', () => {
+    let game = null;
     const options = toOptions(`
       . . . .
       . * * .
       . . . .
     `);
 
+    beforeEach(() => { game = minesweeper(options); });
+
     it('should have initial state', () => {
-      const game = minesweeper(options);
       assert.equal(false, game.finished());
       assert.equal(gameState.NOT_STARTED, game.state());
       assert.equal(true, game.test_mode);
+    });
+
+    it('should reveal two adjacent mines', () => {
+      assert.equal(fieldState.UNKNOWN, game.cellState(0, 1));
+      game.reveal(0, 1);
+      assert.equal(fieldState.TWO, game.cellState(0, 1));
     });
   });
 });

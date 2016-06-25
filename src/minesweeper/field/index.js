@@ -1,5 +1,6 @@
 import fieldState from '../fieldState';
-import {times, isNil} from 'lodash';
+import cellNeighbours from './cellNeighbours';
+import {times, isNil, each, isEqual} from 'lodash';
 
 export default (row_count, column_count) => {
   const state = [];
@@ -13,9 +14,20 @@ export default (row_count, column_count) => {
     });
   });
 
+  const neighbouringMines = (neighbours) => {
+    const results = [];
+    each(neighbours, (neighbour) => {
+      each(mines, (mine) => {
+        if (isEqual(neighbour, mine)) results.push(mine);
+      });
+    });
+    return results;
+  };
+
   const cellState = (row, column) => state[row][column];
   const reveal = (row, column) => {
-    state[row][column] = fieldState.ONE;
+    const neighbours = cellNeighbours(row_count, column_count, row, column);
+    state[row][column] = neighbouringMines(neighbours).length.toString();
   };
 
   return {
