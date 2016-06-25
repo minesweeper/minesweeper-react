@@ -13,12 +13,12 @@ describe('field', () => {
         assert.equal(fieldState.UNKNOWN, f.cellState(row_index, column_index));
       });
     });
-    assert.equal(false, f.hasMines());
+    assert.equal(false, f.minesPlaced());
   });
 
   it('should have mines after mines are assigned', () => {
     const f = field(row_count, column_count);
     f.placeMines([0, 0]);
-    assert.equal(true, f.hasMines());
+    assert.equal(true, f.minesPlaced());
   });
 });

@@ -14,10 +14,12 @@ export default (row_count, column_count) => {
   });
 
   const cellState = (row, column) => state[row][column];
-  const reveal = (row, column) => {};
+  const reveal = (row, column) => {
+    state[row][column] = fieldState.ONE;
+  };
 
   return {
-    hasMines: () => !isNil(mines),
+    minesPlaced: () => !isNil(mines),
     placeMines: (m) => { mines = m; },
     cellState: cellState,
     reveal: reveal
