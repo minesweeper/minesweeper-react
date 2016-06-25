@@ -14,6 +14,22 @@ describe('minesweeper', () => {
     assert.equal(default_row_count, config.row_count);
     assert.equal(default_column_count, config.column_count);
     assert.equal(default_mine_count, config.mine_count);
+    assert.equal(false, config.test_mode);
+  });
+
+  it('should have initial state for test game (where mines are placed)', () => {
+    const row_count = 1;
+    const column_count = 2;
+    const mines = [[0, 0]];
+    const config = configuration({
+      row_count: row_count,
+      column_count: column_count,
+      mines: mines
+    });
+    assert.equal(row_count, config.row_count);
+    assert.equal(column_count, config.column_count);
+    assert.equal(mines.length, config.mine_count);
+    assert.equal(true, config.test_mode);
   });
 
   it('should have initial state for configured game', () => {
@@ -28,6 +44,7 @@ describe('minesweeper', () => {
     assert.equal(row_count, config.row_count);
     assert.equal(column_count, config.column_count);
     assert.equal(mine_count, config.mine_count);
+    assert.equal(false, config.test_mode);
   });
 
   it('should throw error for less than 1 row', () => {

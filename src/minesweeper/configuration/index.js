@@ -19,11 +19,21 @@ const validate_mine_count = (row_count, column_count, mine_count) => {
   if (mine_count >= cells_available_for_mines) throw new Error(`must place fewer mines than the number of available cells`);
 };
 
+const specified_or_default = (specified_value, default_value) =>
+  isNil(specified_value) ? default_value : specified_value;
+
+const determine_mine_count = (mines, mine_count) => (
+  isNil(mines) ?
+  specified_or_default(mine_count, default_mine_count) :
+  mines.length
+);
+
 const configuration = (options) => {
   const configuration = options || {};
-  const row_count = isNil(configuration.row_count) ? default_row_count : configuration.row_count;
-  const column_count = isNil(configuration.column_count) ? default_column_count : configuration.column_count;
-  const mine_count = isNil(configuration.mine_count) ? default_mine_count : configuration.mine_count;
+  const row_count = specified_or_default(configuration.row_count, default_row_count);
+  const column_count = specified_or_default(configuration.column_count, default_column_count);
+  const mines = configuration.mines;
+  const mine_count = determine_mine_count(mines, configuration.mine_count);
 
   validate_row_count(row_count);
   validate_column_count(column_count);
@@ -32,7 +42,9 @@ const configuration = (options) => {
   return {
     row_count: row_count,
     column_count: column_count,
-    mine_count: mine_count
+    mine_count: mine_count,
+    mines: mines,
+    test_mode: !isNil(mines)
   };
 };
 
