@@ -1,8 +1,9 @@
-import fieldState from './fieldState';
-import {times} from 'lodash';
+import fieldState from '../fieldState';
+import {times, isNil} from 'lodash';
 
 export default (row_count, column_count) => {
   const state = [];
+  let mines = null;
 
   times(row_count, (row_index) => {
     const row = [];
@@ -13,8 +14,12 @@ export default (row_count, column_count) => {
   });
 
   const cellState = (row, column) => state[row][column];
+  const reveal = (row, column) => {};
 
   return {
-    cellState: cellState
+    hasMines: () => !isNil(mines),
+    placeMines: (m) => { mines = m; },
+    cellState: cellState,
+    reveal: reveal
   };
 };
