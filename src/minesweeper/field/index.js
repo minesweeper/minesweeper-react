@@ -1,5 +1,6 @@
 import fieldState from '../fieldState';
 import cellNeighbours from './cellNeighbours';
+import renderAsString from './renderAsString';
 import {times, isNil, each, isEqual} from 'lodash';
 
 export default (row_count, column_count) => {
@@ -34,6 +35,7 @@ export default (row_count, column_count) => {
     minesPlaced: () => !isNil(mines),
     placeMines: (m) => { mines = m; },
     cellState: cellState,
-    reveal: reveal
+    reveal: reveal,
+    renderAsString: () => renderAsString(state)
   };
 };

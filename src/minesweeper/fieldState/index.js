@@ -1,5 +1,5 @@
 export default {
-  UNKNOWN: 'unknown',
+  UNKNOWN: '.',
   ONE: '1',
   TWO: '2'
 };

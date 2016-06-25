@@ -21,8 +21,11 @@ const minesweeper = (options) => {
     finished: finished,
     state: () => state,
     cellState: cellState,
-    reveal: reveal
+    reveal: reveal,
+    renderAsString: visibleField.renderAsString
   });
 };
+
+global.minesweeper = minesweeper;
 
 export default minesweeper;
