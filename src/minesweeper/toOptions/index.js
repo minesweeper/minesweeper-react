@@ -1,17 +1,17 @@
-import _ from 'lodash';
+import {forEach, trim} from 'lodash';
 
 export default (string) => {
   const lines = string.split("\n");
   let row_count = 0;
   let column_count = 0;
   const mines = [];
-  _.forEach(lines, (line) => {
-    const trim_line = _.trim(line);
+  forEach(lines, (line) => {
+    const trim_line = trim(line);
     if (trim_line !== '') {
       const chars = trim_line.split(" ");
       const char_count = chars.length;
       if (char_count > column_count) column_count = char_count;
-      _.forEach(chars, (char, column_index) => {
+      forEach(chars, (char, column_index) => {
         if (char === '*') {
           mines.push([row_count, column_index]);
         }
