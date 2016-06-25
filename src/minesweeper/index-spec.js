@@ -25,9 +25,10 @@ describe('minesweeper', () => {
     });
 
     it('should reveal the neighbour to the one mine and immediately win the game', () => {
-      assert.equal(fieldState.UNKNOWN, game.cellState(0, 0));
-      game.reveal(0, 0);
-      assert.equal('1', game.cellState(0, 0));
+      const cell = [0, 0];
+      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
+      game.reveal(cell);
+      assert.equal('1', game.cellState(cell));
       assert.equal(gameState.WON, game.state());
       assert.equal(true, game.finished());
     });
@@ -50,19 +51,19 @@ describe('minesweeper', () => {
     });
 
     it('should reveal a mine and immediately lose the game', () => {
-      const row = 1;
-      const column = 1;
-      assert.equal(fieldState.UNKNOWN, game.cellState(row, column));
-      game.reveal(row, column);
-      assert.equal(fieldState.MINE, game.cellState(row, column));
+      const cell = [1, 1];
+      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
+      game.reveal(cell);
+      assert.equal(fieldState.MINE, game.cellState(cell));
       assert.equal(gameState.LOST, game.state());
       assert.equal(true, game.finished());
     });
 
     it('should reveal two adjacent mines', () => {
-      assert.equal(fieldState.UNKNOWN, game.cellState(0, 1));
-      game.reveal(0, 1);
-      assert.equal('2', game.cellState(0, 1));
+      const cell = [0, 1];
+      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
+      game.reveal(cell);
+      assert.equal('2', game.cellState(cell));
     });
   });
 });
