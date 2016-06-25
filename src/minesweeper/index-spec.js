@@ -1,4 +1,5 @@
 import minesweeper from '.';
+import gameState from './gameState';
 import toOptions from './toOptions';
 
 describe('minesweeper', () => {
@@ -6,7 +7,7 @@ describe('minesweeper', () => {
     it('should have initial state for default game', () => {
       const game = minesweeper();
       assert.equal(false, game.finished());
-      assert.equal('not started', game.state());
+      assert.equal(gameState.NOT_STARTED, game.state());
     });
   });
 
@@ -20,14 +21,7 @@ describe('minesweeper', () => {
     it('should have initial state for configured game', () => {
       const game = minesweeper(options);
       assert.equal(false, game.finished());
-      assert.equal('not started', game.state());
-    });
-
-    it('should have initial state for configured game', () => {
-      const game = minesweeper(options);
-      game.reveal(0, 0);
-      assert.equal(true, game.finished());
-      assert.equal('won', game.state());
+      assert.equal(gameState.NOT_STARTED, game.state());
     });
   });
 
@@ -41,7 +35,7 @@ describe('minesweeper', () => {
     it('should have initial state', () => {
       const game = minesweeper(options);
       assert.equal(false, game.finished());
-      assert.equal('not started', game.state());
+      assert.equal(gameState.NOT_STARTED, game.state());
     });
   });
 });

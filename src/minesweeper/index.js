@@ -1,16 +1,22 @@
 import configuration from './configuration';
+import gameState from './gameState';
 
 const minesweeper = (options) => {
-  let state = 'not started';
+  const config = configuration(options);
+  let state = gameState.NOT_STARTED;
 
-  const finished = () => (state === 'won' || state === 'lost');
+  const finished = () => (state === gameState.WON || state === gameState.LOST);
   const reveal = (row, column) => {
-    state = 'won';
+    state = gameState.STARTED;
+  };
+  const cellState = (row, column) => {
+    return '.';
   };
 
-  return Object.assign(configuration(options), {
+  return Object.assign(config, {
     finished: finished,
     state: () => state,
+    cellState: cellState,
     reveal: reveal
   });
 };
