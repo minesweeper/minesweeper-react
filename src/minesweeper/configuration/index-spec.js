@@ -29,4 +29,44 @@ describe('minesweeper', () => {
     assert.equal(column_count, config.column_count);
     assert.equal(mine_count, config.mine_count);
   });
+
+  it('should throw error for less than 1 row', () => {
+    const invalid_row_count = 0;
+    assert.throws(
+      () => configuration({row_count: invalid_row_count}),
+      Error,
+      'must have at least 1 row'
+    );
+  });
+
+  it('should throw error for less than 1 column', () => {
+    const invalid_column_count = 0;
+    assert.throws(
+      () => configuration({column_count: invalid_column_count}),
+      Error,
+      'must have at least 1 column'
+    );
+  });
+
+  it('should throw error attempting to place a mine into each available cell', () => {
+    const row_count = 2;
+    const column_count = 2;
+    const mine_count = 4;
+    assert.throws(
+      () => configuration({row_count: row_count, column_count: column_count, mine_count: mine_count}),
+      Error,
+      'must place fewer mines than the number of available cells'
+    );
+  });
+
+  it('should throw error attempting to plaec more mines than the number of available cells', () => {
+    const row_count = 2;
+    const column_count = 2;
+    const mine_count = 5;
+    assert.throws(
+      () => configuration({row_count: row_count, column_count: column_count, mine_count: mine_count}),
+      Error,
+      'must place fewer mines than the number of available cells'
+    );
+  });
 });

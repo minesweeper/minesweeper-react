@@ -22,6 +22,7 @@ export default (string) => {
   return {
     row_count: row_count,
     column_count: column_count,
+    mine_count: mines.length,
     mines: mines
   };
 };

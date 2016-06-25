@@ -9,6 +9,7 @@ describe('toOptions', () => {
     `);
     assert.equal(3, options.row_count);
     assert.equal(4, options.column_count);
+    assert.equal(2, options.mine_count);
     assert.deepEqual([[1, 1], [1, 2]], options.mines);
   });
 });
