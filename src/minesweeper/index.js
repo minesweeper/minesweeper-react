@@ -5,7 +5,7 @@ import randomlyPlaceMines from './randomlyPlaceMines';
 
 const minesweeper = (options) => {
   const config = configuration(options);
-  const state = gameState.NOT_STARTED;
+  let state = gameState.NOT_STARTED;
   const visibleField = field(config.row_count, config.column_count);
 
   const finished = () => (state === gameState.WON || state === gameState.LOST);
@@ -13,7 +13,7 @@ const minesweeper = (options) => {
     if (!visibleField.minesPlaced()) {
       visibleField.placeMines(config.mines || randomlyPlaceMines(config, row, column));
     }
-    visibleField.reveal(row, column);
+    if (visibleField.reveal(row, column)) state = gameState.LOST;
   };
   const cellState = (row, column) => visibleField.cellState(row, column);
 

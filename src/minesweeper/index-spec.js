@@ -47,12 +47,14 @@ describe('minesweeper', () => {
       assert.equal(true, game.test_mode);
     });
 
-    it('should reveal a mine', () => {
+    it('should reveal a mine and immediately lose the game', () => {
       const row = 1;
       const column = 1;
       assert.equal(fieldState.UNKNOWN, game.cellState(row, column));
       game.reveal(row, column);
       assert.equal(fieldState.MINE, game.cellState(row, column));
+      assert.equal(gameState.LOST, game.state());
+      assert.equal(true, game.finished());
     });
 
     it('should reveal two adjacent mines', () => {
