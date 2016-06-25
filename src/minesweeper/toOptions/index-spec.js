@@ -7,8 +7,7 @@ describe('toOptions', () => {
       . * * .
       . . . .
     `);
-    assert.equal(3, options.row_count);
-    assert.equal(4, options.column_count);
-    assert.deepEqual([[1, 1], [1, 2]], options.mines);
+    assert.deepEqual(options.dimensions, [3, 4]);
+    assert.deepEqual(options.mines, [[1, 1], [1, 2]]);
   });
 });

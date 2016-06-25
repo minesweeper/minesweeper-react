@@ -6,7 +6,7 @@ import randomlyPlaceMines from './randomlyPlaceMines';
 const minesweeper = (options) => {
   const config = configuration(options);
   let state = gameState.NOT_STARTED;
-  const visibleField = field([config.row_count, config.column_count]);
+  const visibleField = field(config.dimensions);
 
   const finished = () => (state === gameState.WON || state === gameState.LOST);
 

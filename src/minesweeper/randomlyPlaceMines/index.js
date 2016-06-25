@@ -1,10 +1,11 @@
 import {times, shuffle, take, isEqual} from 'lodash';
 
 export default (configuration, row, column) => {
+  const [row_count, column_count] = configuration.dimensions;
   const cells = [];
 
-  times(configuration.row_count, (row_index) => {
-    times(configuration.column_count, (column_index) => {
+  times(row_count, (row_index) => {
+    times(column_count, (column_index) => {
       if (!isEqual([row, column], [row_index, column_index])) {
         cells.push([row_index, column_index]);
       }

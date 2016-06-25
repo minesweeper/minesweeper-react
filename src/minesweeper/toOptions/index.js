@@ -20,8 +20,7 @@ export default (string) => {
     }
   });
   return {
-    row_count: row_count,
-    column_count: column_count,
+    dimensions: [row_count, column_count],
     mines: mines
   };
 };

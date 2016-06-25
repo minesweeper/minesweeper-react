@@ -7,21 +7,21 @@ describe('minesweeper', () => {
   describe('with defaults', () => {
     it('should have initial state for default game', () => {
       const game = minesweeper();
-      assert.equal(false, game.finished());
-      assert.equal(gameState.NOT_STARTED, game.state());
+      assert(!game.finished());
+      assert.equal(game.state(), gameState.NOT_STARTED);
     });
   });
 
   describe('with 1 x 2 and 1 mine', () => {
     let game = null;
-    const options = { row_count: 1, column_count: 2, mine_count: 1};
+    const options = {dimensions: [1, 2], mine_count: 1};
 
     beforeEach(() => { game = minesweeper(options); });
 
     it('should have initial state for configured game', () => {
       assert.equal(false, game.finished());
       assert.equal(gameState.NOT_STARTED, game.state());
-      assert.equal(false, game.test_mode);
+      assert(!game.test_mode);
     });
 
     it('should reveal the neighbour to the one mine and immediately win the game', () => {
