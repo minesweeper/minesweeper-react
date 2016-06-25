@@ -8,7 +8,7 @@ const withinBounds = (row_count, column_count, row, column) => (
   withinBound(row, row_count) && withinBound(column, column_count)
 );
 
-export default (row_count, column_count, row, column) => {
+export default ([row_count, column_count], [row, column]) => {
   const cells = [];
 
   each(offsets, (row_offset) => {

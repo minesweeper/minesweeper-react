@@ -25,7 +25,7 @@ export default (row_count, column_count) => {
     if (revealedMine) {
       state[row][column] = fieldState.MINE;
     } else {
-      const neighbours = cellNeighbours(row_count, column_count, row, column);
+      const neighbours = cellNeighbours([row_count, column_count], [row, column]);
       state[row][column] = neighbouringMines(neighbours).length.toString();
     }
     return revealedMine;

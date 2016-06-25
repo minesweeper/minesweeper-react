@@ -1,14 +1,12 @@
 import cellNeighbours from '.';
 
 describe('cellNeighbours', () => {
-  const row_count = 3;
-  const column_count = 3;
+  const dimensions = [3, 3];
 
   it('should find all neighbours for middle cell', () => {
-    const row = 1;
-    const column = 1;
+    const cell = [1, 1];
     assert.deepEqual(
-      cellNeighbours(row_count, column_count, row, column),
+      cellNeighbours(dimensions, cell),
       [
         [0, 0], [0, 1], [0, 2],
         [1, 0], [1, 2],
@@ -18,10 +16,9 @@ describe('cellNeighbours', () => {
   });
 
   it('should find all neighbours for top left cell', () => {
-    const row = 0;
-    const column = 0;
+    const cell = [0, 0];
     assert.deepEqual(
-      cellNeighbours(row_count, column_count, row, column),
+      cellNeighbours(dimensions, cell),
       [
                 [0, 1],
         [1, 0], [1, 1]
@@ -30,10 +27,9 @@ describe('cellNeighbours', () => {
   });
 
   it('should find all neighbours for bottom right cell', () => {
-    const row = 2;
-    const column = 2;
+    const cell = [2, 2];
     assert.deepEqual(
-      cellNeighbours(row_count, column_count, row, column),
+      cellNeighbours(dimensions, cell),
       [
         [1, 1], [1, 2],
         [2, 1]
