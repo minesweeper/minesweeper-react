@@ -2,6 +2,7 @@ import configuration from './configuration';
 import field from './field';
 import gameState from './gameState';
 import randomlyPlaceMines from './randomlyPlaceMines';
+import {assign} from 'lodash';
 
 const minesweeper = (options) => {
   const config = configuration(options);
@@ -22,7 +23,7 @@ const minesweeper = (options) => {
     }
   };
 
-  return Object.assign(config, {
+  return assign(config, {
     finished: finished,
     state: () => state,
     cellState: visibleField.cellState,
