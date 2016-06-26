@@ -4,38 +4,38 @@ import fieldState from './fieldState';
 import toOptions from './toOptions';
 
 describe('minesweeper', () => {
+  let game = null;
+
   describe('with defaults', () => {
     it('should have initial state for default game', () => {
-      const game = minesweeper();
-      assert(!game.finished());
-      assert.equal(game.state(), gameState.NOT_STARTED);
+      game = minesweeper();
+      expect(game.finished()).toBeFalsy();
+      expect(game.state()).toBe(gameState.NOT_STARTED);
     });
   });
 
   describe('with 1 x 2 and 1 mine', () => {
-    let game = null;
     const options = {dimensions: [1, 2], mine_count: 1};
 
     beforeEach(() => { game = minesweeper(options); });
 
     it('should have initial state for configured game', () => {
-      assert.equal(false, game.finished());
-      assert.equal(gameState.NOT_STARTED, game.state());
-      assert(!game.test_mode);
+      expect(game.finished()).toBeFalsy();
+      expect(game.state()).toBe(gameState.NOT_STARTED);
+      expect(game.test_mode).toBeFalsy();
     });
 
     it('should reveal the neighbour to the one mine and immediately win the game', () => {
       const cell = [0, 0];
-      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
-      game.reveal(cell);
-      assert.equal('1', game.cellState(cell));
-      assert.equal(gameState.WON, game.state());
-      assert.equal(true, game.finished());
+      expect(game.cellState(cell)).toBe(fieldState.UNKNOWN);
+      expect(game.reveal(cell)).toBe(gameState.WON);
+      expect(game.state()).toBe(gameState.WON);
+      expect(game.cellState(cell)).toBe('1');
+      expect(game.finished()).toBeTruthy();
     });
   });
 
   describe('in test mode (with fixed mines)', () => {
-    let game = null;
     const options = toOptions(`
       . . . .
       . * * .
@@ -45,25 +45,27 @@ describe('minesweeper', () => {
     beforeEach(() => { game = minesweeper(options); });
 
     it('should have initial state', () => {
-      assert.equal(false, game.finished());
-      assert.equal(gameState.NOT_STARTED, game.state());
-      assert.equal(true, game.test_mode);
+      expect(game.finished()).toBeFalsy();
+      expect(game.state()).toBe(gameState.NOT_STARTED);
+      expect(game.test_mode).toBeTruthy();
     });
 
     it('should reveal a mine and immediately lose the game', () => {
       const cell = [1, 1];
-      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
-      game.reveal(cell);
-      assert.equal(fieldState.MINE, game.cellState(cell));
-      assert.equal(gameState.LOST, game.state());
-      assert.equal(true, game.finished());
+      expect(game.cellState(cell)).toBe(fieldState.UNKNOWN);
+      expect(game.reveal(cell)).toBe(gameState.LOST);
+      expect(game.state()).toBe(gameState.LOST);
+      expect(game.cellState(cell)).toBe(fieldState.MINE);
+      expect(game.finished()).toBeTruthy();
     });
 
     it('should reveal two adjacent mines', () => {
       const cell = [0, 1];
-      assert.equal(fieldState.UNKNOWN, game.cellState(cell));
-      game.reveal(cell);
-      assert.equal('2', game.cellState(cell));
+      expect(game.cellState(cell)).toBe(fieldState.UNKNOWN);
+      expect(game.reveal(cell)).toBe(gameState.STARTED);
+      expect(game.state()).toBe(gameState.STARTED);
+      expect(game.cellState(cell)).toBe('2');
+      expect(game.finished()).toBeFalsy();
     });
   });
 });

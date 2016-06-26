@@ -21,6 +21,7 @@ const minesweeper = (options) => {
     } else {
       state = visibleField.allCellsWithoutMinesRevealed() ? gameState.WON : gameState.STARTED;
     }
+    return state;
   };
 
   return assign(config, {
