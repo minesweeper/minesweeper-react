@@ -59,6 +59,15 @@ describe('minesweeper', () => {
       expect(game.finished()).toBeTruthy();
     });
 
+    it('should make no state changes when game is finished', () => {
+      const mine_cell = [1, 1];
+      const safe_cell = [0, 0];
+      expect(game.reveal(mine_cell)).toBe(gameState.LOST);
+      expect(game.reveal(safe_cell)).toBe(gameState.LOST);
+      expect(game.cellState(safe_cell)).toBe(fieldState.UNKNOWN);
+      expect(game.finished()).toBeTruthy();
+    });
+
     it('should reveal two adjacent mines', () => {
       const cell = [0, 1];
       expect(game.cellState(cell)).toBe(fieldState.UNKNOWN);

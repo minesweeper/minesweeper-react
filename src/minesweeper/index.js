@@ -11,11 +11,15 @@ const minesweeper = (options) => {
 
   const finished = () => (state === gameState.WON || state === gameState.LOST);
 
-  const reveal = (cell) => {
-    const [row, column] = cell;
+  const ensureMinesHaveBeenPlaced = ([row, column]) => {
     if (!visibleField.minesPlaced()) {
       visibleField.placeMines(config.mines || randomlyPlaceMines(config, row, column));
     }
+  };
+
+  const reveal = (cell) => {
+    if (finished()) return state;
+    ensureMinesHaveBeenPlaced(cell);
     if (visibleField.reveal(cell)) {
       state = gameState.LOST;
     } else {
