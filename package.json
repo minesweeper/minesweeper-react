@@ -23,6 +23,7 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "lodash": "^4.13.1",
+    "mines": "^0.1.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "style-loader": "^0.13.1",
