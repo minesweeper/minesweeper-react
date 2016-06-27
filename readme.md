@@ -2,7 +2,7 @@
 
 ```sh
 npm install
-node_modules/.bin/webpack
+./bin/watch
 ```
 
 To try the game in a web console:
