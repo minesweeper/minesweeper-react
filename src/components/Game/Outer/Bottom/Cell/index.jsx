@@ -7,7 +7,7 @@ class Cell extends React.Component {
   }
 
   render() {
-    const className = `${styles.field} ${styles.unclicked}`;
+    const className = `${styles.field} ${styles.unknown}`;
     return <td className={className} />;
   }
 }

@@ -5,10 +5,8 @@ import {times} from 'lodash';
 import styles from './styles.css';
 
 describe('Bottom', () => {
-  it('should render as a table with lots of cells', () => {
+  it('should render as a table with rows of cells', () => {
     styles.bottom = 'bottom';
-    styles.unclicked = 'unclicked';
-    styles.field = 'field';
 
     const row_count = 2;
     const column_count = 3;
