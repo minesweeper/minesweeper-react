@@ -14,12 +14,16 @@ class Cell extends React.Component {
         }
       }
     );
+    this.onClick = (event) => {
+      event.preventDefault();
+      props.game.reveal(props.position);
+    };
     this.state = { style: styles.unknown };
   }
 
   render() {
     const className = `${styles.field} ${this.state.style}`;
-    return <td className={className} />;
+    return <td onClick={this.onClick} className={className} />;
   }
 }
 
