@@ -4,10 +4,12 @@ import Game from './components/Game';
 import mines from 'mines';
 import {each} from 'lodash';
 
-global.mines = mines;
+global.games = [];
 
 const renderComponent = (element) => {
-  render(<Game />, element);
+  const game = mines();
+  global.games.push(game);
+  render(<Game game={game} />, element);
 };
 
 each(document.getElementsByClassName("minesweeper-game"), renderComponent);

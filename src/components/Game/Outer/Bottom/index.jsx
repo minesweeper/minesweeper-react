@@ -1,26 +1,34 @@
 import React from 'react';
 import styles from './styles.css';
+import Cell from './Cell';
 import {times} from 'lodash';
 
-const Bottom = () => {
-  const number_of_rows = 16;
-  const number_of_cols = 30;
+class Bottom extends React.Component {
+  render() {
+    const game = this.context.game;
+    const [row_count, column_count] = game.dimensions;
 
-  const rows = times(number_of_rows, (row) => {
-    const cols = times(number_of_cols, (col) => {
-      return <td key={`${row}.${col}`} className={`${styles.unclicked} ${styles.field}`}></td>;
+    const rows = times(row_count, (row) => {
+      const cols = times(column_count, (col) => {
+        return <Cell key={`${row}.${col}`} game={game} position={[row, col]} />;
+      });
+      return <tr key={row}>{cols}</tr>;
     });
-    return <tr key={row}>{cols}</tr>;
-  });
-  return (
-    <div className={styles.bottom}>
-      <table>
-        <tbody>
-          {rows}
-        </tbody>
-      </table>
-    </div>
-  );
+
+    return (
+      <div className={styles.bottom}>
+        <table>
+          <tbody>
+            {rows}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+}
+
+Bottom.contextTypes = {
+  game: React.PropTypes.object
 };
 
 export default Bottom;
