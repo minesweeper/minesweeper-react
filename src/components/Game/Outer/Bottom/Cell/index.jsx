@@ -3,7 +3,7 @@ import styles from './styles.css';
 import styleForCellState from './styleForCellState';
 import {isEqual} from 'lodash';
 
-const now = () => (new Date()).getTime()
+const now = () => (new Date()).getTime();
 
 class Cell extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Cell extends React.Component {
     );
     this.onMouseDown = (event) => {
       event.preventDefault();
-      this.setState({clickStart: now()})
+      this.setState({clickStart: now()});
     };
     this.onMouseUp = (event) => {
       event.preventDefault();
