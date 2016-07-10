@@ -1,3 +1,10 @@
+:local(.status) {
+  height: 26px;
+  width: 26px;
+  padding-right: 30px;
+  background-repeat: no-repeat;
+}
+
 :local(.alive) {
   width: 28;
   background-image: url(data:image/gif;base64,R0lGODlhGgAaALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAAGgAaAAAEjBDJSaulB73Nu/8bID1HaZ5oioha6r7r+AI0DbMkSi88b6Ox1gnQK/qAuKFxCTgFcwfikml6mqSLnQ/bLFmjRW0Wm/UmwdNp90tO99bntrucib/Vb7OsxDVyq2doWzVhgHt8c3R6QlduXYaMV20/ToE6NY9Ihy+cdZudLk8XoxcsmKeoqTQIGaSuFREAADs=);
