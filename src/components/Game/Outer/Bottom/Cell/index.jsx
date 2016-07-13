@@ -16,11 +16,14 @@ class Cell extends React.Component {
         }
       }
     );
-    this.onMouseDown = (event) => {
+    this.onTouchStart = (event) => {
       event.preventDefault();
       this.setState({clickStart: now()});
     };
-    this.onMouseUp = (event) => {
+    this.onMouseDown = (event) => {
+      event.preventDefault();
+    };
+    this.onTouchEnd = (event) => {
       event.preventDefault();
       const duration = now() - this.state.clickStart;
       if (duration < 500) {
@@ -28,6 +31,10 @@ class Cell extends React.Component {
       } else {
         props.game.mark(props.position);
       }
+    };
+    this.onMouseUp = (event) => {
+      event.preventDefault();
+      props.game.reveal(props.position);
     };
     this.state = { style: styles.unknown };
   }
