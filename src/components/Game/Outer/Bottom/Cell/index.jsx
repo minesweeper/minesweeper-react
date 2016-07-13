@@ -16,11 +16,23 @@ class Cell extends React.Component {
         }
       }
     );
-    this.onTouchStart = (event) => {
-      this.setState({clickStart: now()});
-    };
     this.onMouseDown = (event) => {
       event.preventDefault();
+    };
+    this.onMouseUp = (event) => {
+      event.preventDefault();
+      props.game.reveal(props.position);
+    };
+    this.onDoubleClick = (event) => {
+      event.preventDefault();
+      props.game.chord(props.position);
+    };
+    this.onRightClick = (event) => {
+      event.preventDefault();
+      props.game.mark(props.position);
+    };
+    this.onTouchStart = (event) => {
+      this.setState({clickStart: now()});
     };
     this.onTouchEnd = (event) => {
       const duration = now() - this.state.clickStart;
@@ -30,16 +42,13 @@ class Cell extends React.Component {
         props.game.mark(props.position);
       }
     };
-    this.onMouseUp = (event) => {
-      event.preventDefault();
-      props.game.reveal(props.position);
-    };
+
     this.state = { style: styles.unknown };
   }
 
   render() {
     const className = `${styles.field} ${this.state.style}`;
-    return <td onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onTouchEnd={this.onTouchEnd} onTouchStart={this.onTouchStart} className={className} />;
+    return <td onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onDoubleClick={this.onDoubleClick} onContextMenu={this.onRightClick} onTouchEnd={this.onTouchEnd} onTouchStart={this.onTouchStart} className={className} />;
   }
 }
 
