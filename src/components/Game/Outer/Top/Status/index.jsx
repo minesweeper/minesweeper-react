@@ -25,7 +25,7 @@ class Status extends React.Component {
 
   render() {
     return (
-      <span onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} className={`${styles.status} ${this.state.style}`}>
+      <span onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onTouchStart={this.onMouseDown} onTouchEnd={this.onMouseUp} className={`${styles.status} ${this.state.style}`}>
       </span>
     );
   }

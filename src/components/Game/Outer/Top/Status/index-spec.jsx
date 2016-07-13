@@ -18,28 +18,28 @@ describe('Status', () => {
     const tree = sd.shallowRender(<Status game={game} />);
     const instance = tree.getMountedInstance();
     expect(tree.getRenderOutput()).toEqualJSX(
-      <span className='status alive' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp}>
+      <span className='status alive' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp} onTouchStart={instance.onMouseDown} onTouchEnd={instance.onMouseUp}>
       </span>
     );
 
     onGameChange(gameStates.WON);
     tree.reRender(<Status game={game} />);
     expect(tree.getRenderOutput()).toEqualJSX(
-      <span className='status won' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp}>
+      <span className='status won' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp} onTouchStart={instance.onMouseDown} onTouchEnd={instance.onMouseUp}>
       </span>
     );
 
     onGameChange(gameStates.LOST);
     tree.reRender(<Status game={game} />);
     expect(tree.getRenderOutput()).toEqualJSX(
-      <span className='status dead' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp}>
+      <span className='status dead' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp} onTouchStart={instance.onMouseDown} onTouchEnd={instance.onMouseUp}>
       </span>
     );
 
     instance.onMouseDown({preventDefault: () => {}});
     tree.reRender(<Status game={game} />);
     expect(tree.getRenderOutput()).toEqualJSX(
-      <span className='status alivePressed' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp}>
+      <span className='status alivePressed' onMouseDown={instance.onMouseDown} onMouseUp={instance.onMouseUp} onTouchStart={instance.onMouseDown} onTouchEnd={instance.onMouseUp}>
       </span>
     );
   });
