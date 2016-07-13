@@ -31,11 +31,10 @@ You can either check out this amazing technology by browsing here https://minesw
 
 Or you can embed any number of minesweeper games in your own page by including the following:
 
-```html
+\`\`\`html
 <div class=\"minesweeper-game\"></div>
 <script src=\"${SHA}\"></script>
-```
-
+\`\`\`
 " > ../minesweeper.github.io/readme.md
 
 echo A new release is now prepared
