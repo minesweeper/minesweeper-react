@@ -20,7 +20,7 @@ echo "<!DOCTYPE HTML>
   </head>
   <body style=\"background-color:#008080;\">
     <div class=\"minesweeper-game\"></div>
-    <script src=\"${SHA}\"></script>
+    <script src=\"${SHA}.js\"></script>
   </body>
 </html>
 " > ../minesweeper.github.io/index.html
@@ -33,7 +33,7 @@ Or you can embed any number of minesweeper games in your own page by including t
 
 \`\`\`html
 <div class=\"minesweeper-game\"></div>
-<script src=\"${SHA}\"></script>
+<script src=\"https://minesweeper.github.io/${SHA}.js\"></script>
 \`\`\`
 " > ../minesweeper.github.io/readme.md
 
