@@ -7,9 +7,6 @@ npm run dist
 
 SHA=`git rev-parse HEAD`
 
-rm ../minesweeper.github.io/*.js
-rm ../minesweeper.github.io/index.html
-
 cp scripts.js ../minesweeper.github.io/${SHA}.js
 
 echo "<!DOCTYPE HTML>
@@ -41,7 +38,6 @@ echo A new release is now prepared
 echo
 echo To deploy:
 echo cd ../minesweeper.github.io
-echo git add --all
-echo git commit -m \"Release ${SHA}\"
+echo git commit -am \"Release ${SHA}\"
 echo git push origin master
 echo open https://minesweeper.github.io
