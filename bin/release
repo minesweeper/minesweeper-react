@@ -38,6 +38,7 @@ echo A new release is now prepared
 echo
 echo To deploy:
 echo cd ../minesweeper.github.io
-echo git commit -am \"Release ${SHA}\"
+echo git add --all
+echo git commit -m \"Release ${SHA}\"
 echo git push origin master
 echo open https://minesweeper.github.io
