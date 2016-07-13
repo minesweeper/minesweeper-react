@@ -3,6 +3,7 @@
   background-position: center center;
   height: 16px;
   width: 16px;
+  cursor:'pointer';
 }
 
 :local(.unknown) {
