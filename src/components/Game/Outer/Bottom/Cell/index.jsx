@@ -41,7 +41,7 @@ class Cell extends React.Component {
 
   render() {
     const className = `${styles.field} ${this.state.style}`;
-    return <td onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} className={className} />;
+    return <td onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onTouchEnd={this.onTouchEnd} onTouchStart={this.onTouchStart} className={className} />;
   }
 }
 
