@@ -2,6 +2,34 @@
 
 set -e
 
-node_modules/.bin/webpack --config webpack.config-prod.js -p
+npm install
+npm run dist
 
-cp scripts.js ../react-release/`git rev-parse HEAD`.js
+SHA=`git rev-parse HEAD`
+
+rm ../minesweeper.github.io/*.js
+rm ../minesweeper.github.io/index.html
+
+cp scripts.js ../minesweeper.github.io/${SHA}.js
+
+echo "<!DOCTYPE HTML>
+<html lang=\"en\">
+  <head>
+      <title>Minesweeper</title>
+      <meta charset=\"utf-8\">
+  </head>
+  <body style=\"background-color:#008080;\">
+    <div class=\"minesweeper-game\"></div>
+    <script src=\"${SHA}\"></script>
+  </body>
+</html>
+" > ../minesweeper.github.io/index.html
+
+echo A new release is now prepared
+echo
+echo To deploy:
+echo cd ../minesweeper.github.io
+echo git add --all
+echo git commit -m \"Release ${SHA}\"
+echo git push origin master
+echo open https://minesweeper.github.io
