@@ -17,14 +17,12 @@ class Cell extends React.Component {
       }
     );
     this.onTouchStart = (event) => {
-      event.preventDefault();
       this.setState({clickStart: now()});
     };
     this.onMouseDown = (event) => {
       event.preventDefault();
     };
     this.onTouchEnd = (event) => {
-      event.preventDefault();
       const duration = now() - this.state.clickStart;
       if (duration < 500) {
         props.game.reveal(props.position);
