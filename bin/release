@@ -25,6 +25,19 @@ echo "<!DOCTYPE HTML>
 </html>
 " > ../minesweeper.github.io/index.html
 
+echo "# minesweeper react widget
+
+You can either check out this amazing technology by browsing here https://minesweeper.github.io
+
+Or you can embed any number of minesweeper games in your own page by including the following:
+
+```html
+<div class=\"minesweeper-game\"></div>
+<script src=\"${SHA}\"></script>
+```
+
+" > ../minesweeper.github.io/readme.md
+
 echo A new release is now prepared
 echo
 echo To deploy:
