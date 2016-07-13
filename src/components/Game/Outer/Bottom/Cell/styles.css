@@ -8,6 +8,7 @@
 
 :local(.unknown) {
   background-image: url(data:image/gif;base64,R0lGODlhEAAQALMAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwICAgP8AAAD/AP//AAAA//8A/wD//////ywAAAAAEAAQAAAELPDJSSt4J+ut0eVg5mEhN5bmh3bqepzu266wW9Mzeut5OSLAoFAIKBqPyGIEADs=);
+  cursor:'pointer';
 }
 
 :local(.mines0) {
