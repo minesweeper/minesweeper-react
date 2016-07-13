@@ -3,3 +3,5 @@
 set -e
 
 node_modules/.bin/webpack --config webpack.config-prod.js -p
+
+cp scripts.js ../react-release/`git rev-parse HEAD`.js
