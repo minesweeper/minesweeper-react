@@ -21,7 +21,8 @@ class Cell extends React.Component {
       event.preventDefault();
     };
     this.onMouseUp = (event) => {
-      if (props.position === this.state.mouseStartPosition) {
+      const rightMouseButton = 2;
+      if (event.button !== rightMouseButton && props.position === this.state.mouseStartPosition) {
         props.game.reveal(props.position);
       }
       event.preventDefault();
