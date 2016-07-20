@@ -17,22 +17,26 @@ class Cell extends React.Component {
       }
     );
     this.onMouseDown = (event) => {
+      this.setState({mouseStartPosition: props.position});
       event.preventDefault();
     };
     this.onMouseUp = (event) => {
+      if (props.positon !== this.state.mouseStartPosition) {
+        props.game.reveal(props.position);
+      }
       event.preventDefault();
-      props.game.reveal(props.position);
     };
     this.onDoubleClick = (event) => {
-      event.preventDefault();
       props.game.chord(props.position);
+      event.preventDefault();
     };
     this.onRightClick = (event) => {
-      event.preventDefault();
       props.game.mark(props.position);
+      event.preventDefault();
     };
     this.onTouchStart = (event) => {
       this.setState({touchStart: now(), touchStartPosition: props.position});
+      event.preventDefault();
     };
     this.onTouchEnd = (event) => {
       if (props.positon !== this.state.touchStartPosition) {
@@ -43,6 +47,7 @@ class Cell extends React.Component {
           props.game.mark(props.position);
         }
       }
+      event.preventDefault();
     };
 
     this.state = { style: styles.unknown };
