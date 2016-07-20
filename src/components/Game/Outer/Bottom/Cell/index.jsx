@@ -32,14 +32,16 @@ class Cell extends React.Component {
       props.game.mark(props.position);
     };
     this.onTouchStart = (event) => {
-      this.setState({clickStart: now()});
+      this.setState({touchStart: now(), touchStartPosition: props.position});
     };
     this.onTouchEnd = (event) => {
-      const duration = now() - this.state.clickStart;
-      if (duration < 500) {
-        props.game.reveal(props.position);
-      } else {
-        props.game.mark(props.position);
+      if (props.positon !== this.state.touchStartPosition) {
+        const duration = now() - this.state.touchStart;
+        if (duration < 500) {
+          props.game.reveal(props.position);
+        } else {
+          props.game.mark(props.position);
+        }
       }
     };
 
