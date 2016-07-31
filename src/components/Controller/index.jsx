@@ -30,10 +30,11 @@ class Controller extends React.Component {
         <div className={styles.middle}>
           <div className={styles.inner}>
             <div className="playPause" />
+            <span className={`${styles.status} ${styles.won}`} />
             <Lcd number={state.won} />
+            <span className={`${styles.status} ${styles.dead}`} />
             <Lcd number={state.lost} />
             <div className="speed" />
-            CONTROLLING {this.props.name}
           </div>
         </div>
       </div>
