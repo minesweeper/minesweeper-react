@@ -1,11 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-      <title>Minesweeper React</title>
-      <meta charset="utf-8">
+    <title>Minesweeper React</title>
+    <meta charset="utf-8">
   </head>
   <body style="background-color:#008080;">
-    <div class="minesweeper-game"></div>
+    <table>
+      <tr>
+        <td><div class="minesweeper-game" data-preset="expert"></div></td>
+        <td><div class="minesweeper-game" data-preset="expert"></div></td>
+      </tr>
+      <tr>
+        <td><div class="minesweeper-game" data-preset="intermediate"></div></td>
+        <td><div class="minesweeper-game" data-preset="intermediate"></div></td>
+      </tr>
+      <tr>
+        <td><div class="minesweeper-game" data-preset="beginner"></div></td>
+        <td><div class="minesweeper-game" data-preset="beginner"></div></td>
+      </tr>
+    </table>
     <script src="scripts.js"></script>
   </body>
 </html>

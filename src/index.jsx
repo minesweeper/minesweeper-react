@@ -7,8 +7,10 @@ import {each} from 'lodash';
 global.games = [];
 
 const renderComponent = (element) => {
-  const game = create();
+  const preset = element.getAttribute('data-preset');
+  const game = create({profile: preset});
   global.games.push(game);
+
   render(<Game game={game} />, element);
 };
 
