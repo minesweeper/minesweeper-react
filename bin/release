@@ -17,7 +17,7 @@ echo "<!DOCTYPE HTML>
   </head>
   <body style=\"background-color:#008080;\">
     <div class=\"minesweeper-game\" data-preset=\"expert\"></div>
-    <div class=\"minesweeper-game\" data-preset=\"expert\" data-robot=\"500\"></div>
+    <div class=\"minesweeper-game\" data-preset=\"expert\" data-robot=\"200\"></div>
     <script src=\"${SHA}.js\"></script>
   </body>
 </html>
