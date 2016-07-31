@@ -19,7 +19,6 @@ const renderComponent = (element) => {
     const ms = parseInt(element.getAttribute('data-robot'));
     let won = 0, lost = 0;
     const poll = () => {
-      takeTurn(game);
       if (game.state() === gameStates.WON) {
         won += 1;
         game.reset();
@@ -30,8 +29,10 @@ const renderComponent = (element) => {
         game.reset();
         console.log(`${id}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
       }
+      takeTurn(game);
+      setTimeout(poll, ms);
     };
-    setInterval(poll, ms);
+    poll();
   }
 
   render(<Game game={game} />, element);
