@@ -21,17 +21,9 @@ const renderComponent = (element) => {
 
   if (element.getAttribute('data-robot')) {
     const ms = parseInt(element.getAttribute('data-robot'));
-    let won = 0, lost = 0;
     const poll = () => {
-      if (game.state() === gameStates.WON) {
-        won += 1;
+      if (game.state() === gameStates.WON || game.state() === gameStates.LOST) {
         game.reset();
-        console.log(`${name}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
-      }
-      if (game.state() === gameStates.LOST) {
-        lost += 1;
-        game.reset();
-        console.log(`${name}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
       }
       takeTurn(game);
       setTimeout(poll, ms);
