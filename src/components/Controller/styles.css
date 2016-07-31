@@ -1,0 +1,22 @@
+:local(.outer) {
+  margin: auto auto;
+  top: 4px;
+  border-width: 1px;
+  border-style: outset;
+  background-color: #BBB;
+  padding: 1px;
+}
+
+:local(.middle) {
+  border: 3px outset #EEE;
+  background-color: #BBB;
+}
+
+:local(.inner) {
+  height: 26px;
+  margin: 5px;
+  border: 3px inset #EEE;
+  background-color: #BBB;
+  text-align: center;
+  font-size: 22px;
+}
