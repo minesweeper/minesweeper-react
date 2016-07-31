@@ -1,5 +1,5 @@
 import React from 'react';
-import Lcd from './Lcd';
+import Lcd from '../../../Lcd';
 import Status from './Status';
 import styles from './styles.css';
 
