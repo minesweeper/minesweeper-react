@@ -11,7 +11,7 @@ global.games = [];
 const renderComponent = (element) => {
   const preset = element.getAttribute('data-preset');
 
-  const game = create({profile: preset});
+  const game = create({preset: preset});
   global.games.push(game);
   const id = global.games.length;
 
