@@ -34,7 +34,7 @@ Or you can embed any number of minesweeper games in your own page by including t
 <script src=\"https://minesweeper.github.io/${SHA}.js\"></script>
 \`\`\`
 
-The following resets are available: \`beginner\`, \`intermediate\` and \`expert\`.
+The following presets are available: \`beginner\`, \`intermediate\` and \`expert\`.
 
 If your preference is to embed a minesweeper game that will play itself (to save your users the trouble) then you may include the following:
 
