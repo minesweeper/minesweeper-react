@@ -3,7 +3,7 @@ import styles from './styles.css';
 
 class Controller extends React.Component {
   render() {
-    return(
+    return (
       <div className={styles.outer}>
         <div className={styles.middle}>
           <div className={styles.inner}>
