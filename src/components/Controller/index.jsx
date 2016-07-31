@@ -29,7 +29,7 @@ class Controller extends React.Component {
       <div className={styles.outer}>
         <div className={styles.middle}>
           <div className={styles.inner}>
-            <div className="playPause" />
+            <button className={`${styles.status} ${styles.play}`} />
             <span className={`${styles.status} ${styles.won}`} />
             <Lcd number={state.won} />
             <span className={`${styles.status} ${styles.dead}`} />
