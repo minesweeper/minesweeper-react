@@ -6,14 +6,18 @@ import {takeTurn} from 'mines-robot';
 import {each} from 'lodash';
 import {gameStates} from 'mines';
 
-global.games = [];
+global.minesweeperGames = {};
 
 const renderComponent = (element) => {
   const preset = element.getAttribute('data-preset');
 
   const game = create({preset: preset});
-  global.games.push(game);
-  const id = global.games.length;
+
+  const name = element.getAttribute('data-name');
+
+  if (name) {
+    global.minesweeperGames[name] = game;
+  }
 
   if (element.getAttribute('data-robot')) {
     const ms = parseInt(element.getAttribute('data-robot'));
@@ -22,12 +26,12 @@ const renderComponent = (element) => {
       if (game.state() === gameStates.WON) {
         won += 1;
         game.reset();
-        console.log(`${id}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
+        console.log(`${name}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
       }
       if (game.state() === gameStates.LOST) {
         lost += 1;
         game.reset();
-        console.log(`${id}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
+        console.log(`${name}: won ${won} and lost ${lost}`); // eslint-disable-line no-console
       }
       takeTurn(game);
       setTimeout(poll, ms);
