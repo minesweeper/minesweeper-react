@@ -14,7 +14,7 @@
 }
 
 :local(.inner) {
-  height: 26px;
+  height: 28px;
   margin: 5px;
   border: 3px inset #EEE;
   background-color: #BBB;
@@ -23,7 +23,7 @@
 }
 
 :local(.status) {
-  margin: 1px;
+  margin: 2px;
   height: 25px;
   width: 25px;
   float: left;
