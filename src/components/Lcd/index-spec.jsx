@@ -25,6 +25,15 @@ describe('Lcd', () => {
     );
   });
 
+  it('can render a 1 digit number', () => {
+    const tree = sd.shallowRender(<Lcd className="theClassName" number='8' numberdigits='1' />);
+    expect(tree.getRenderOutput()).toEqualJSX(
+      <div className='theClassName'>
+        <Digit digit='8' />
+      </div>
+    );
+  });
+
   it('should drop any extra digits', () => {
     const tree = sd.shallowRender(<Lcd className="theClassName" number='54321' />);
     expect(tree.getRenderOutput()).toEqualJSX(
