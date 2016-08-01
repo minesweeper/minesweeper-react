@@ -2,19 +2,31 @@ import React from 'react';
 import styles from './styles.css';
 import Lcd from '../Lcd';
 import {gameStates} from 'mines';
+import {takeTurn} from 'mines-robot';
 
 class Controller extends React.Component {
   constructor(props) {
     super(props);
+    const speedToMillis = [0, 3000, 2000, 1000, 800, 700, 500, 200, 100, 50];
     const game = global.minesweeperGames[props.name];
     const incrementWon = () => { this.setState({won: this.state.won + 1}); };
     const incrementLost = () => { this.setState({lost: this.state.lost + 1}); };
+    let playing = false;
     if (game) {
       game.onGameStateChange((newState) => {
         if (newState === gameStates.WON) incrementWon();
         if (newState === gameStates.LOST) incrementLost();
       });
     }
+    this.play = () => {
+      takeTurn(game);
+      const newState = game.state();
+      if (newState === gameStates.WON || newState === gameStates.LOST) {
+        if (playing) game.reset();
+        else return;
+      }
+      setTimeout(this.play, speedToMillis[this.state.speed]);
+    };
     this.increaseSpeed = () => {
       if (this.state.speed < 9) this.setState({speed: this.state.speed + 1});
     };
@@ -24,9 +36,12 @@ class Controller extends React.Component {
     this.togglePlayPause = () => {
       const playingOrPaused = this.state.playingOrPaused;
       if (playingOrPaused === 'play') {
+        playing = false;
         this.setState({playingOrPaused: 'pause'});
       }
       if (playingOrPaused === 'pause') {
+        playing = true;
+        this.play();
         this.setState({playingOrPaused: 'play'});
       }
     };
