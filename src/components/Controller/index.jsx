@@ -34,7 +34,9 @@ class Controller extends React.Component {
             <Lcd number={state.won} />
             <span className={`${styles.status} ${styles.dead}`} />
             <Lcd number={state.lost} />
-            <div className="speed" />
+            <button className={`${styles.status} ${styles.minus}`} />
+            <Lcd number='5' numberdigits='1' />
+            <button className={`${styles.status} ${styles.plus}`} />
           </div>
         </div>
       </div>
