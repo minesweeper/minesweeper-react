@@ -4,7 +4,7 @@
   "description": "minesweeper in react",
   "main": "index.js",
   "scripts": {
-    "test": "eslint src --ext .js,.jsx && mocha --require mocha-compilers.js --require mocha-init.js 'src/**/*-spec.*'",
+    "test": "mocha --require mocha-compilers.js --require mocha-init.js 'src/**/*-spec.*' && eslint src --ext .js,.jsx",
     "dist": "webpack --config webpack.config-prod.js -p"
   },
   "repository": {
@@ -25,7 +25,7 @@
     "css-loader": "^0.23.1",
     "lodash": "^4.13.1",
     "mines": "^1.1.1",
-    "mines-robot": "^0.1.0",
+    "mines-robot": "^0.2.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "style-loader": "^0.13.1",
