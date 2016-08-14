@@ -9,23 +9,65 @@ SHA=`git rev-parse HEAD`
 
 cp scripts.js ../minesweeper.github.io/${SHA}.js
 
-echo "<!DOCTYPE HTML>
+TOP="<!DOCTYPE HTML>
 <html lang=\"en\">
   <head>
       <title>Minesweeper</title>
       <meta charset=\"utf-8\">
   </head>
   <body style=\"background-color:#008080;\">
-    <div class=\"minesweeper-game\" data-preset=\"expert\" data-name=\"game1\"></div>
-    <div class=\"minesweeper-controller\" data-name=\"game1\"></div>
-    <div class=\"minesweeper-game\" data-preset=\"intermediate\" data-name=\"game2\"></div>
-    <div class=\"minesweeper-controller\" data-name=\"game2\"></div>
-    <div class=\"minesweeper-game\" data-preset=\"beginner\" data-name=\"game3\"></div>
-    <div class=\"minesweeper-controller\" data-name=\"game3\"></div>
-    <script src=\"${SHA}.js\"></script>
-  </body>
+"
+
+EXPERT="<div class=\"minesweeper-game\" data-preset=\"expert\" data-name=\"game1\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game1\"></div>
+"
+
+INTERMEDIATE="<div class=\"minesweeper-game\" data-preset=\"intermediate\" data-name=\"game1\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game1\"></div>
+"
+
+BEGINNER="<div class=\"minesweeper-game\" data-preset=\"beginner\" data-name=\"game1\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game1\"></div>
+"
+
+ALL="<div class=\"minesweeper-game\" data-preset=\"expert\" data-name=\"game1\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game1\"></div>
+<div class=\"minesweeper-game\" data-preset=\"intermediate\" data-name=\"game2\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game2\"></div>
+<div class=\"minesweeper-game\" data-preset=\"beginner\" data-name=\"game3\"></div>
+<div class=\"minesweeper-controller\" data-name=\"game3\"></div>
+"
+
+SCRIPT_ROOT="<script src=\"${SHA}.js\"></script>
+"
+
+SCRIPT_NOT_ROOT="<script src=\"../${SHA}.js\"></script>
+"
+
+FOOTER_ROOT="<div style=\"text-align: center;\">
+  <a href=\"./beginner/index.html\">Beginner</a> |
+  <a href=\"./intermediate/index.html\">Intermediate</a> |
+  <a href=\"./index.html\">Expert</a> |
+  <a href=\"./all/index.html\">All</a>
+</div>
+"
+
+FOOTER_NOT_ROOT="<div style=\"text-align: center;\">
+  <a href=\"../beginner/index.html\">Beginner</a> |
+  <a href=\"../intermediate/index.html\">Intermediate</a> |
+  <a href=\"../index.html\">Expert</a> |
+  <a href=\"../all/index.html\">All</a>
+</div>
+"
+
+BOTTOM="</body>
 </html>
-" > ../minesweeper.github.io/index.html
+"
+
+echo "${TOP}${EXPERT}${SCRIPT_ROOT}${FOOTER_ROOT}${BOTTOM}" > ../minesweeper.github.io/index.html
+echo "${TOP}${INTERMEDIATE}${SCRIPT_NOT_ROOT}${FOOTER_NOT_ROOT}${BOTTOM}" > ../minesweeper.github.io/intermediate/index.html
+echo "${TOP}${BEGINNER}${SCRIPT_NOT_ROOT}${FOOTER_NOT_ROOT}${BOTTOM}" > ../minesweeper.github.io/beginner/index.html
+echo "${TOP}${ALL}${SCRIPT_NOT_ROOT}${FOOTER_NOT_ROOT}${BOTTOM}" > ../minesweeper.github.io/all/index.html
 
 echo "# minesweeper react widget
 
