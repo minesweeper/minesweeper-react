@@ -45,18 +45,18 @@ SCRIPT_NOT_ROOT="<script src=\"../${SHA}.js\"></script>
 "
 
 FOOTER_ROOT="<div style=\"text-align: center;\">
-  <a href=\"./beginner/index.html\">Beginner</a> |
-  <a href=\"./intermediate/index.html\">Intermediate</a> |
-  <a href=\"./index.html\">Expert</a> |
-  <a href=\"./all/index.html\">All</a>
+  <a href=\"./beginner\">Beginner</a> |
+  <a href=\"./intermediate\">Intermediate</a> |
+  <a href=\".\">Expert</a> |
+  <a href=\"./all\">All</a>
 </div>
 "
 
 FOOTER_NOT_ROOT="<div style=\"text-align: center;\">
-  <a href=\"../beginner/index.html\">Beginner</a> |
-  <a href=\"../intermediate/index.html\">Intermediate</a> |
-  <a href=\"../index.html\">Expert</a> |
-  <a href=\"../all/index.html\">All</a>
+  <a href=\"../beginner\">Beginner</a> |
+  <a href=\"../intermediate\">Intermediate</a> |
+  <a href=\"..\">Expert</a> |
+  <a href=\"../all\">All</a>
 </div>
 "
 
