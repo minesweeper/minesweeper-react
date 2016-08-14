@@ -18,6 +18,10 @@ echo "<!DOCTYPE HTML>
   <body style=\"background-color:#008080;\">
     <div class=\"minesweeper-game\" data-preset=\"expert\" data-name=\"game1\"></div>
     <div class=\"minesweeper-controller\" data-name=\"game1\"></div>
+    <div class=\"minesweeper-game\" data-preset=\"intermediate\" data-name=\"game2\"></div>
+    <div class=\"minesweeper-controller\" data-name=\"game2\"></div>
+    <div class=\"minesweeper-game\" data-preset=\"beginner\" data-name=\"game3\"></div>
+    <div class=\"minesweeper-controller\" data-name=\"game3\"></div>
     <script src=\"${SHA}.js\"></script>
   </body>
 </html>
