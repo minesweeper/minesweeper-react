@@ -25,7 +25,7 @@
     "css-loader": "^0.23.1",
     "lodash": "^4.13.1",
     "mines": "^1.1.1",
-    "mines-robot": "^0.4.0",
+    "mines-robot": "^0.5.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "style-loader": "^0.13.1",
